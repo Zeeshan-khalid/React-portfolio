@@ -62,7 +62,7 @@ export default class MyDocument extends Document {
             property="twitter:description"
             content="Hey there, This is Zeeshan Khalid. I am an ReactJS & Front End Developer."
           />
-          <meta property="twitter:image" content="" />
+          {/* <meta property="twitter:image" content="" /> */}
         </Head>
         <body>
           <Main />
