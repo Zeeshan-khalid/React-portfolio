@@ -7,22 +7,33 @@ import Timeline from "../components/TimeLine/TimeLine";
 import { Layout } from "../layout/Layout";
 import { Section, Homebanner } from "../styles/GlobalComponents";
 
+
 const Home = () => {
+
   return (
-    <Layout>
-      <Homebanner grid>
-        <Hero />
-        <BgAnimation />
-      </Homebanner>
-      {/* <Section grid>
-        <Hero />
-        <BgAnimation />
-      </Section> */}
-      <Projects />
-      <Technologies />
-      <Timeline />
-      <Acomplishments />
-    </Layout>
+    // <Layout>
+    //   <Homebanner grid>
+    //     <Hero />
+    //     <BgAnimation />
+    //   </Homebanner>
+    //   <Projects />
+    //   <Technologies />
+    //   <Timeline />
+    //   <Acomplishments />
+    // </Layout>
+
+    <div>
+      <style jsx>{`
+        h1 {
+          font-size: 50px;
+          text-align: center;
+          position: relative;
+          top: 250px;
+          padding: 15px;
+        }
+      `}</style>
+      <h1>Website Coming soon</h1>
+    </div >
   );
 };
 

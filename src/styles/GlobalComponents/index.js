@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 export const Homebanner = styled.div`
   display: ${(props) => (props.grid ? "grid" : "flex")};
   flex-direction: ${(props) => (props.row ? "row" : "column")};
@@ -328,3 +329,5 @@ export const LinkIconImg = styled.div`
 export const Link = styled.a`
   color: ${(props) => props.theme.colors.link};
 `;
+
+
