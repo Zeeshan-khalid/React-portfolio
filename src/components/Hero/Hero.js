@@ -18,10 +18,11 @@ const Hero = (props) => (
         </SectionTitle>
         <SectionText>
           This is Zeeshan Khalid. I am an Senior Front End Developer
-          <br />
-          <br />
-          Coding is my passion, coding is fun, coding is frustrating, coding is
-          rewarding and most importantly coding is my life.
+          <br />I am a well-established Senior Front End Developer with 5+ years
+          of experience in working in the field of web and application
+          development. Having experience in both Solo Projects and the fastpaced
+          Team Oriented web agency environment I knows how to operate in Both
+          Environments and gets the job done.
         </SectionText>
         <Button
           onClick={(e) => {

@@ -1,5 +1,5 @@
-import React from "react";
-
+import React, { useEffect } from "react";
+import Pagination from "./Pagination";
 import {
   BlogCard,
   CardInfo,
@@ -19,39 +19,67 @@ import {
   SectionTitle,
 } from "../../styles/GlobalComponents";
 import { projects } from "../../constants/constants";
+import { useState } from "react";
 
-const Projects = () => (
-  <Section id="projects">
-    {/* <SectionDivider /> */}
-    <SectionTitle main>Projects</SectionTitle>
-    <GridContainer>
-      {projects.map((p, i) => {
-        return (
-          <BlogCard key={i}>
-            <Img src={p.image} />
+const Projects = () => {
+  const [posts, setPosts] = useState([]);
+  const [currentpage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(3);
 
-            <HeaderThree title={p.title}>{p.title}</HeaderThree>
-            <Hr />
+  // Get current posts
+  const indexOfLastPost = currentpage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
 
-            <CardInfo className="card-info">{p.description}</CardInfo>
-            <div>
-              <TitleContent>Tech Stack</TitleContent>
+  // Change page
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+  useEffect(() => {
+    setPosts(projects);
+  });
+
+  return (
+    <Section id="projects">
+      <SectionTitle main>Projects</SectionTitle>
+      <GridContainer>
+        {currentPosts.map((p, i) => {
+          return (
+            <BlogCard key={i}>
+              <Img src={p.image} />
+
+              <HeaderThree title={p.title}>{p.title}</HeaderThree>
               <Hr />
-              <TagList>
-                {p.tags.map((t, i) => {
-                  return <Tag key={i}>{t}</Tag>;
-                })}
-              </TagList>
-            </div>
-            <UtilityList>
-              <ExternalLinks href={p.visit}>Live Preview</ExternalLinks>
-              <ExternalLinks href={p.source}>Source Code</ExternalLinks>
-            </UtilityList>
-          </BlogCard>
-        );
-      })}
-    </GridContainer>
-  </Section>
-);
+
+              <CardInfo className="card-info">{p.description}</CardInfo>
+              <div>
+                <TitleContent>Tech Stack</TitleContent>
+                <Hr />
+                <TagList>
+                  {p.tags.map((t, i) => {
+                    return <Tag key={i}>{t}</Tag>;
+                  })}
+                </TagList>
+              </div>
+              <UtilityList>
+                {/* <ExternalLinks href={p.visit} target="_blank">
+                  Live Preview
+                </ExternalLinks> */}
+                <ExternalLinks href={p.source} target="_blank">
+                  Source Code
+                </ExternalLinks>
+              </UtilityList>
+            </BlogCard>
+          );
+        })}
+      </GridContainer>
+      <Pagination
+        postsPerPage={postsPerPage}
+        totalPosts={posts.length}
+        paginate={paginate}
+      />
+    </Section>
+  );
+};
 
 export default Projects;

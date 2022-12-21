@@ -1,5 +1,19 @@
 import styled from "styled-components";
 
+export const MainUl = styled.ul`
+  display: flex;
+  justify-content: center;
+`;
+export const Mainli = styled.li`
+  border: 1px solid white;
+  text-align: center;
+  padding: 7px 10px;
+  cursor: pointer;
+  margin: 40px 30px 0px 0px;
+`;
+export const Mainanchor = styled.li`
+  color: white;
+`;
 
 export const Homebanner = styled.div`
   display: ${(props) => (props.grid ? "grid" : "flex")};
@@ -23,10 +37,19 @@ export const Homebanner = styled.div`
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
-    padding: ${(props) => (props.nopadding ? "0" : "16px 16px 0")};
-
+    padding: ${(props) => (props.nopadding ? "0" : "15% 0")};
+    display: block;
+    height: 100%;
     width: calc(100vw - 32px);
     flex-direction: column;
+  }
+`;
+
+export const BgAnimations = styled.div`
+  @media ${(props) => props.theme.breakpoints.sm} {
+    position: absolute;
+    top: 0;
+    width: 100%;
   }
 `;
 
@@ -35,7 +58,8 @@ export const Section = styled.section`
   flex-direction: ${(props) => (props.row ? "row" : "column")};
   padding: ${(props) => (props.nopadding ? "0" : "32px 48px 0")};
   margin: 0 auto;
-  padding: 0 12%;
+  margin-top: 80px;
+  padding: 0 8%;
   // max-width: 1040px;
   box-sizing: content-box;
   position: relative;
@@ -116,6 +140,7 @@ export const SectionDivider = styled.div`
   height: 6px;
   border-radius: 10px;
   background-color: #fff;
+  margin: 4rem 0;
   background: ${(props) =>
     props.colorAlt
       ? "linear-gradient(270deg, #F46737 0%, #945DD6 100%)"
@@ -234,6 +259,7 @@ export const ButtonBack = styled.div`
     width: 100%;
     height: 32px;
     font-size: 14px;
+    margin-top: 50px;
     margin-bottom: ${({ alt }) => (alt ? "0" : "32px")};
   }
 `;
@@ -329,5 +355,3 @@ export const LinkIconImg = styled.div`
 export const Link = styled.a`
   color: ${(props) => props.theme.colors.link};
 `;
-
-

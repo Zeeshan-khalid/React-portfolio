@@ -5,35 +5,26 @@ import Projects from "../components/Projects/Projects";
 import Technologies from "../components/Technologies/Technologies";
 import Timeline from "../components/TimeLine/TimeLine";
 import { Layout } from "../layout/Layout";
-import { Section, Homebanner } from "../styles/GlobalComponents";
+import { Homebanner, BgAnimations } from "../styles/GlobalComponents";
 
+import styled from "styled-components";
 
 const Home = () => {
 
   return (
-    // <Layout>
-    //   <Homebanner grid>
-    //     <Hero />
-    //     <BgAnimation />
-    //   </Homebanner>
-    //   <Projects />
-    //   <Technologies />
-    //   <Timeline />
-    //   <Acomplishments />
-    // </Layout>
+    <Layout>
+      <Homebanner grid>
+        <Hero />
+        <BgAnimations>
+          <BgAnimation />
+        </BgAnimations>
 
-    <div>
-      <style jsx>{`
-        h1 {
-          font-size: 50px;
-          text-align: center;
-          position: relative;
-          top: 250px;
-          padding: 15px;
-        }
-      `}</style>
-      <h1>Website Coming soon</h1>
-    </div >
+      </Homebanner>
+      <Projects />
+      <Technologies />
+      <Timeline />
+      <Acomplishments />
+    </Layout>
   );
 };
 
