@@ -59,6 +59,21 @@ export const projects = [
     visit: "",
     id: 5,
   },
+  {
+    title: "Hunch Webpage",
+    description: "",
+    image: "/images/project1.png",
+    tags: [
+      "ReactJs",
+      "Firebase",
+      "Javascript",
+      // "TailwindCSS",
+      "Metamask Wallet",
+    ],
+    source: "",
+    visit: "",
+    id: 5,
+  },
 ];
 
 export const TimeLineData = [
