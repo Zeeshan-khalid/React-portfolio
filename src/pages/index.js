@@ -6,10 +6,23 @@ import Technologies from "../components/Technologies/Technologies";
 import Timeline from "../components/TimeLine/TimeLine";
 import { Layout } from "../layout/Layout";
 import { Homebanner, BgAnimations } from "../styles/GlobalComponents";
+import { useState, useEffect } from "react";
 
-import styled from "styled-components";
 
 const Home = () => {
+
+  useEffect(() => {
+    const callAPI = async () => {
+      try {
+        const res = await fetch(`https://ipinfo.io/?token=40bdeb367b7535`);
+        const data = await res.json();
+        console.log(data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    callAPI();
+  }, []);
 
   return (
     <Layout>

@@ -64,6 +64,10 @@ export default class MyDocument extends Document {
             content="Hey there, This is Zeeshan Khalid. I am an ReactJS & Front End Developer."
           />
           <meta property="twitter:image" content="" />
+          <script
+            src="//code.tidio.co/pwzub5dqskeabve5odwlaec6eisuw7px.js"
+            async
+          ></script>
         </Head>
         <body>
           <Main />
