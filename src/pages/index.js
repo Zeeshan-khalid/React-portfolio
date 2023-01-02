@@ -9,20 +9,21 @@ import { Homebanner, BgAnimations } from "../styles/GlobalComponents";
 import { useState, useEffect } from "react";
 
 
+
 const Home = () => {
 
-  useEffect(() => {
-    const callAPI = async () => {
-      try {
-        const res = await fetch(`https://ipinfo.io/?token=40bdeb367b7535`);
-        const data = await res.json();
-        console.log(data);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    callAPI();
-  }, []);
+  // useEffect(() => {
+  //   const callAPI = async () => {
+  //     try {
+  //       const res = await fetch(`https://ipinfo.io/?token=40bdeb367b7535`);
+  //       const data = await res.json();
+  //       console.log(data);
+  //     } catch (err) {
+  //       console.log(err);
+  //     }
+  //   };
+  //   callAPI();
+  // }, []);
 
   return (
     <Layout>
